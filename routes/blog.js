@@ -41,7 +41,7 @@ blogRouter.post('/blog',function(req,res){
             console.log("Blog Inserted")
         }
     })
-    res.redirect('/dashboard')
+    res.redirect('/blog/blog')
 })
 
 module.exports=blogRouter;
