@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background: #eab0dc;
+                font-family: ubuntu;
+            }
+            ul{
+            list-style-type: none;
+            padding: 0;
+            }
+            li{
+                padding: 20px;
+                
+                font-size: 20px;
+                color: #555;
+                position: relative;
+                border-bottom: 1px solid #e6e6e6;
+                height: auto;
+            }
+            li span{
+                background: #f6f6f6;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #title{
+                text-align: center;
+                width: 40%;
+                border-bottom: 5px solid #0099ff;
+                margin: 2px;
+                padding: 10px;
+                display: block;
+                box-sizing: border-box;
+                font-size: 18px;
+                border-radius: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: xx-large;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="wigth=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login</title>
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <h1>Dashboard</h1>
+        <form name="form1" action="/blog">
+            <input type="submit" value="Add Blog">
+        </form>
+        <div id="body">
+            <ul>
+            <% files.forEach(function(file){%>
+                <div>
+                <li>
+                <span id="title"><%=file.title%></span>
+                <br>
+                <span id="header"><%=file.header%></span>
+                <br>
+                <span id="body"><%=file.body%></span>
+                <br>
+                <span id="author"><%=file.author%></span>
+                <br>
+                </li>
+                </div>
+            <%})%>
+        </ul>
+        </div>
+        
+    </body>
+    
+</html>

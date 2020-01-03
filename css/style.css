@@ -1,0 +1,21 @@
+#body {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  body{
+    background: #eab0dc;
+    font-family: ubuntu;
+}
+  
+  
+  @media screen and (min-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .card {
+      flex: 1 1 calc(33% - 2rem);
+    }
+  }
