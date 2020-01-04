@@ -2,16 +2,56 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Signup</title>
     </head>
+    <script>
+        form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+                    var a=document.form.name.value;
+                    var b=document.form.email.value;
+                    var c=document.form.password.value;
+                    var d=document.form.username.value;
+                    var e=document.form.age.value;
+                    if((a==null||a=="")&&(b==null||b=="")&&(c==null||c=="")&&(d==null||d=="")){
+                        alert("All fields are required");
+                        return false;
+                    }
+                    else if(a==null||a==""){
+                        alert("Name Required");
+                        return false;
+                    }
+                    else if(b==null||b==""){
+                        alert("Email Required");
+                        return false;
+                    }
+                    else if(c==null||c==""){
+                        alert("Password Required");
+                        return false;
+                    }
+                    else if(d==null||d==""){
+                        alert("Username Required");
+                        return false;
+                    }
+                    else if(e==null||e==""){
+                        alert("Age Required");
+                        return false;
+                    }
+                    
+                }
+        </script>
     <body>
-        <h1>Signup</h1>
-        <form action="/auth/signup" method="post">
-            <input type="text" name="username">
-            <input type="password" name="password">
-            <input type="submit" value="Signup">
+        
+        <form action="/auth/signup" method="post" class="form">
+            <h1>Signup</h1>
+            <input type="text" name="name" placeholder=" Full Name">
+            <input type="text" name="username" placeholder=" Username">
+            <input type="password" name="password" placeholder=" Password">
+            <input type="text" name="age" placeholder=" Age">
+            <input type="email" name="email" placeholder=" EmailId">
+            <input type="submit" value="Signup" class="button">
         </form>
     </body>
 </html>

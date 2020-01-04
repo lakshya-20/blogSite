@@ -2,16 +2,36 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Login</title>
     </head>
+    <script>
+    function check(){
+                var a=document.form.password.value;
+                var b=document.form.username.value;
+                if((a==null||a=="")&&(b==null||b=="")){
+                    alert("All fields are required");
+                    return false;
+                }
+                else if(a==null||a==""){
+                    alert("Password Required");
+                    return false;
+                }
+                else if(b==null||b==""){
+                    alert("Username Required");
+                    return false;
+                }
+            }
+    </script>
     <body>
-        <h1>Login</h1>
-        <form action="/auth/login" method="post">
-            <input type="text" name="username">
-            <input type="password" name="password">
-            <input type="submit" value="Login">
+        
+        <form action="/auth/login" method="post" class="form">
+            <h1>Login</h1>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Login" class="button">
         </form>
     </body>
 </html>

@@ -19,13 +19,16 @@ module.exports=function(passport){
                     var record=new User();
                     record.username=username;
                     record.password=record.hashPassword(password);
+                    record.name=req.body.name;
+                    record.age=req.body.age;
+                    record.email=req.body.email;
                     record.save(function(err,doc){
                         if(err){
                             res.status(500).send('Database Error')
                             console.log(err);
                         }
                         else{
-                            res.send(doc);
+                            res.redirect('/blog/blog')
                         }
                     })
                 }
