@@ -28,7 +28,7 @@ module.exports=function(passport){
                             console.log(err);
                         }
                         else{
-                            res.redirect('/blog/blog')
+                            res.redirect('/login')
                         }
                     })
                 }
