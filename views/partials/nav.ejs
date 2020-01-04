@@ -1,4 +1,73 @@
-<nav>
-    <ul><a href="/dashboard">Dashboard</a></ul>
-    <ul><a href="/blog">Add</a></ul>
-</nav>
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="wigth=device-width,initial-scale=1 ,shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    body {
+  font-size: 28px;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+    </style>
+<div id="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/blog">Add</a>
+    <a href="/logout" style="float: right;">Logout</a>
+  </div>
+<script>
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</html>

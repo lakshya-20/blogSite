@@ -1,8 +1,27 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/images/Capture3.png");
+  width: auto;  
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
+#button{
+  margin-top: 500px;
+  padding: 0% 45%;
+}
+ul{
+  list-style-type: none;
+  inset-block: true;
+}
+a{
+  margin:15px;
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 0px;
 
-a {
-  color: #00B7FF;
 }

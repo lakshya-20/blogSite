@@ -26,10 +26,15 @@ router.get('/signup',function(req,res,next){
 router.get('/dashboard',loggedin,function(req,res,next){
   //res.send(req.session);
   res.redirect('/blog/blog');
-}) 
+});
 
 router.get('/blog',loggedin,function(req,res,next){
   res.render('blog');
-})
+});
+
+router.get('/logout',function(req,res){
+  req.session.destroy();
+  res.redirect('/');
+});
 
 module.exports = router;
