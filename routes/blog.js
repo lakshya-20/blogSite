@@ -22,7 +22,6 @@ blogRouter.route('/blog')
 })
 */
 blogRouter.get('/blog/:username', (req, res) => {
-    //console.log(req.params.username)
   Blogs.find({author:req.user.username}).sort({dateCreated: -1}).exec(function(err, files){
     // Check if files
     //res.json(files);
