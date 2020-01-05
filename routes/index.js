@@ -25,7 +25,7 @@ router.get('/signup',function(req,res,next){
 
 router.get('/dashboard',loggedin,function(req,res,next){
   //res.send(req.session);
-  res.redirect('/blog/blog');
+  res.redirect('/blog/blog/:username');
 });
 
 router.get('/blog',loggedin,function(req,res,next){

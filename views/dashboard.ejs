@@ -50,14 +50,15 @@
         <h1 id="heading">Dashboard</h1>
         
         <div id="body">
-            <ul id="blogs">
+            <ul id="blogs" style="list-style-type:decimal;">
             <% files.forEach(function(file){%>
-                <div>
+                <div id="blog">
                 <li>
                 <span id="title"><%=file.title%></span>
                 <br>
                 <span id="header"><%=file.header%></span>
-                <span id="author"><%=file.author%></span>
+                
+                <span id="author">Author <%=file.author%></span>
                 <br>
                 <br>
                 <span id="body"><%=file.body%></span>

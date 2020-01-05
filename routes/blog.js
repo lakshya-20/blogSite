@@ -21,13 +21,14 @@ blogRouter.route('/blog')
     })
 })
 */
-blogRouter.get('/blog', (req, res) => {
-    Blogs.find((err, files) => {
-      // Check if files
-      //res.json(files);
-      res.render('dashboard',{files:files})
-    });
+blogRouter.get('/blog/:username', (req, res) => {
+    //console.log(req.params.username)
+  Blogs.find({author:req.user.username}).sort({dateCreated: -1}).exec(function(err, files){
+    // Check if files
+    //res.json(files);
+    res.render('dashboard',{files:files})   
   });
+});
 
 blogRouter.post('/blog',function(req,res){
     req.body.author=req.user.username
