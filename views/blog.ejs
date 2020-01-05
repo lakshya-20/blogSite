@@ -2,17 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel='stylesheet' href='/stylesheets/addBlog.css' />
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Blog</title>
     </head>
     <body>
-        <h1>Blog</h1>
-        <form action="/blog/blog" method="POST">
-            <input type="text" name="title" id="">
-            <input type="text" name="header" id="">
-            <textarea name="body" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="Submit">
+        <% include partials/nav.ejs %>
+        <form action="/blog/blog" method="POST" class="form">
+            <h1>Add Blog</h1>
+            <input type="text" name="title" id="" placeholder=" Title">
+            <textarea name="header" id="" cols="50" rows="5" class="textarea" placeholder=" Header"></textarea>
+            <textarea name="body" id="" cols="50" rows="10" class="textarea" placeholder=" Body"></textarea>
+            <input type="submit" value="Submit" id="button">
         </form>
     </body>
 </html>
