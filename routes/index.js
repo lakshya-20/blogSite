@@ -26,8 +26,12 @@ router.get('/signup',function(req,res,next){
 router.get('/dashboard',loggedin,function(req,res,next){
   //res.send(req.session);
   var username=req.user.username
-  res.redirect('/blog/blog/');
+  res.redirect('/blog/blog/'+username);
 });
+
+router.get('/public',function(req,res,next){
+  res.redirect('/blog/blog');
+})
 
 router.get('/blog',loggedin,function(req,res,next){
   res.render('blog');

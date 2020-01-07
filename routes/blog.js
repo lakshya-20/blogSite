@@ -12,7 +12,7 @@ blogRouter.get('/blog',function(req,res){
             res.status(500).send("Error Occured");
         }
         else{
-            res.render('dashboard',{files:docs})
+            res.render('public',{files:docs})
         }
     })
 })
@@ -41,6 +41,19 @@ blogRouter.post('/blog',function(req,res){
         }
     })
     res.redirect('/blog/blog')
+})
+
+blogRouter.post('/blog/:blogId/delete',function(req,res){
+    console.log(req.params.blogId)
+    Blogs.findByIdAndRemove(req.params.blogId,function(err,doc){
+        if(err){
+            res.status(200).send("Db error")
+        }
+        else{
+            console.log("Blog Deleted")
+        }
+        res.redirect('/blog/blog/'+req.user.username);
+    })
 })
 
 module.exports=blogRouter;
