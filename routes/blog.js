@@ -6,26 +6,25 @@ var bodyParser=require('body-parser')
 var blogRouter= express.Router()
 blogRouter.use(bodyParser.json())
 
-blogRouter.route('/blog')
-/*
-.get(function(req,res){
-    Blogs.find({'author':req.user.username}).toArray(function(err,docs){
+blogRouter.get('/blog',function(req,res){
+    Blogs.find().sort({dateCreated:-1}).exec(function(err,docs){
         if(err){
             res.status(500).send("Error Occured");
-            console.log("khiuhih")
         }
         else{
-            res.json(docs)
-            console.log("Entered 1")
+            res.render('dashboard',{files:docs})
         }
     })
 })
-*/
+
 blogRouter.get('/blog/:username', (req, res) => {
-  Blogs.find({author:req.user.username}).sort({dateCreated: -1}).exec(function(err, files){
-    // Check if files
-    //res.json(files);
-    res.render('dashboard',{files:files})   
+  Blogs.find({author:req.user.username}).sort({dateCreated: -1}).exec(function(err, docs){
+    if(err){
+        res.status(200).send("Error Occured");
+    }
+    else{
+        res.render('dashboard',{files:docs})
+    }
   });
 });
 
