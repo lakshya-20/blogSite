@@ -18,7 +18,7 @@ blogRouter.get('/blog',function(req,res){
 })
 
 blogRouter.get('/blog/:username', (req, res) => {
-  Blogs.find({author:req.user.username}).sort({dateCreated: -1}).exec(function(err, docs){
+  Blogs.find({author:req.user.username}).sort({dateCreated:-1}).exec(function(err, docs){
     if(err){
         res.status(200).send("Error Occured");
     }
@@ -40,7 +40,8 @@ blogRouter.post('/blog',function(req,res){
             console.log("Blog Inserted")
         }
     })
-    res.redirect('/blog/blog')
+    var username=req.user.username
+  res.redirect('/blog/blog/'+username);
 })
 
 blogRouter.post('/blog/:blogId/delete',function(req,res){
@@ -53,6 +54,27 @@ blogRouter.post('/blog/:blogId/delete',function(req,res){
             console.log("Blog Deleted")
         }
         res.redirect('/blog/blog/'+req.user.username);
+    })
+})
+blogRouter.get('/blog/:blogId/edit',function(req,res){
+    Blogs.find({_id:req.params.blogId},function(err,doc){
+        if(err){
+            res.status(200).send("Db error")
+        }
+        else{
+            res.render('editBlog',{files:doc})
+        }
+    })
+})
+blogRouter.post('/blog/:blogId/edit',function(req,res){
+    Blogs.findByIdAndUpdate(req.params.blogId,{$set:req.body},function(err,doc){
+        if(err){
+            res.status(200).send("Db Error")
+        }
+        else{
+            console.log("Blog Updated")
+            res.redirect('/blog/blog/'+req.user.username);
+        }
     })
 })
 

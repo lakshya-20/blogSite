@@ -72,6 +72,21 @@
             #blog{
                 border-bottom: 3px solid #cccccc;
             }
+            .button{
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+              opacity: 0.7;
+              margin-top: 5px;
+              border: 1px solid;
+              border-color: #4d4d4d;
+              border-radius: 5px;
+              text-align: center;
+              color:#4d4d4d;
+              text-decoration: none;
+              text-transform: uppercase;
+              opacity: 0.9; 
+            }
 
 
     * {box-sizing: border-box}
