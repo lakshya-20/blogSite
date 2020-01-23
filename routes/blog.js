@@ -18,14 +18,14 @@ blogRouter.get('/blog',function(req,res){
 })
 
 blogRouter.get('/blog/:username', (req, res) => {
-  Blogs.find({author:req.user.username}).sort({dateCreated:-1}).exec(function(err, docs){
-    if(err){
-        res.status(200).send("Error Occured");
-    }
-    else{
-        res.render('dashboard',{files:docs})
-    }
-  });
+    Blogs.find().sort({dateCreated:-1}).exec(function(err,docs){
+        if(err){
+            res.status(500).send("Error Occured");
+        }
+        else{
+            res.render('dashboard',{files:docs})
+        }
+    })
 });
 
 blogRouter.post('/blog',function(req,res){
@@ -76,6 +76,29 @@ blogRouter.post('/blog/:blogId/edit',function(req,res){
             res.redirect('/blog/blog/'+req.user.username);
         }
     })
+})
+blogRouter.post('/blog/:blogId/like',function(req,res){
+    Blogs.find({_id:req.params.blogId,likes:{person:req.user.username}},function(err,doc){
+        console.log(doc)
+        if(doc.length!=0){
+            res.redirect('/blog/blog/'+req.user.username);
+            console.log("Entered1")
+        }
+        else if(doc.length==0){
+            console.log("Entered2")
+            Blogs.findOne({_id:req.params.blogId},function(err,doc){
+                req.body.noOfLikes=req.body.noOfLikes+1;
+                req.body.person=req.user.username   
+                doc.likes.push(req.body);
+                doc.save();
+                res.redirect('/blog/blog/'+req.user.username);
+            })
+        }
+        else if(err){
+            console.log("Entered3")
+            res.status(200).send("Db Error");
+        }
+        })
 })
 
 module.exports=blogRouter;

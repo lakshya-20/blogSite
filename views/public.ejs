@@ -11,7 +11,6 @@
     </head>
     
     <body>
-        <h1 id="heading">Dashboard</h1>
         <% include partials/publicNav.ejs %>
         
         
@@ -24,7 +23,7 @@
                 <br>
                 <span id="header"><%=file.header%></span>
                 
-                <span id="author">Author <%=file.author%></span>
+                <span id="author">Author <a href="/profile"><%=file.author%></a></span>
                 <br>
                 <br>
                 <span id="body"><%=file.body%></span>

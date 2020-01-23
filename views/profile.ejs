@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Profile</title>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' href='/stylesheets/profile.css' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+
+    <body>
+        <% include partials/authNav.ejs %>
+        <div id="details">
+            <div id="photoBox">
+                <img src="/images/user.png" id="dp">
+            </div>
+            <div id="detailsBox">
+                <% user.forEach(function(user){%>
+                    <span id="username"><%=user.name%></span>
+                    <br>
+                    <span id="about"><%=user.about%></span>
+                    <%})%>
+                    <br>
+                    <ul id="headList">
+                        <li>
+                            <span class="head"><%=noOfBlog%></span>
+                            <br>
+                            <span class="bottom">Blogs</span>
+                        </li>
+                        <li>
+                            <span class="head">20</span>
+                            <br>
+                            <span class="bottom">Likes</span>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+                    <br> 
+                  
+                    
+                     
+            </div>
+        </div>
+        <div id="body">
+            <h1 id="heading">Blogs</h1>
+            <ul id="blogs" style="list-style-type:decimal;">
+                <% blogs.forEach(function(blog){%>
+                    <div id="blog">
+                    <li>
+                    <span id="title"><%=blog.title%></span>
+                    <form method="POST" action="/blog/blog/<%= blog._id%>/like">
+                        <button type="submit" class="button" id="like"><img src="/images/like.png" style="width: 30px;"></button>
+                    </form>
+                    <br> 
+                    <img src="/images/Capture1.PNG" style="width: 60%;height: 20%;">
+                    <br>
+                    <span id="header"><%=blog.header%></span>
+                    <br>
+                    <span id="body"><%=blog.body%></span>
+                    <br>
+                    <form method="POST" action="/blog/blog/<%= blog._id %>/delete">
+                      <button type="submit" class="button">Delete</button>
+                    </form>
+                    <form method="GET" action="/blog/blog/<%= blog._id %>/edit">
+                    <button type="submit" class="button">Edit</button>
+                    </form>
+                    </li>
+                    </div>
+                <%})%>
+            </ul>
+        </div>
+
+    </body>
+</html>

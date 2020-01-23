@@ -39,7 +39,12 @@ router.get('/blog',loggedin,function(req,res,next){
 
 router.get('/logout',function(req,res){
   req.session.destroy();
-  res.redirect('/');
+  res.redirect('/'); 
 });
+
+router.get('/profile',loggedin,function(req,res,next){
+  console.log("kjhkj")
+  res.redirect('/profile/profile/'+req.user.username);
+})
 
 module.exports = router;

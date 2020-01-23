@@ -7,6 +7,18 @@ var dateTime = date+' '+time;
 
 var modelName="blogs"
 
+var likesSchema=new mongoose.Schema({
+    person:{
+        type:String,
+        required:true,
+        default:" "
+    },
+    date:{
+        type:String,
+        default:dateTime
+    }
+});
+
 var blogSchema=new mongoose.Schema({
     title:{
         type:String,
@@ -31,7 +43,12 @@ var blogSchema=new mongoose.Schema({
     image:{
         type:String,
         default:" "
-    }
+    },
+    noOfLikes:{
+        type:Number,
+        default:0
+    },
+    likes:[likesSchema]
 })
 
 module.exports=mongoose.model(modelName,blogSchema,modelName)

@@ -45,7 +45,7 @@
               <span class="dot" onclick="currentSlide(3)"></span> 
             </div>
             -->
-            <h1 id="heading">Dashboard</h1>
+            <!--<h1 id="heading">Dashboard</h1>-->
         <% include partials/authNav.ejs %>
         
         
@@ -55,20 +55,20 @@
                 <div id="blog">
                 <li>
                 <span id="title"><%=file.title%></span>
-                <span id="author">Author <%=file.author%></span>
+                <span id="author">Author <a href="/profile"><%=file.author%></a></span>
+                <br>
+                <br>
+                <form method="POST" action="/blog/blog/<%= file._id%>/like">
+                  <button type="submit" class="button" id="like"><img src="/images/like.png" style="width: 30px;"></button>
+                </form>
+                <br>
+                <img src="/images/Capture1.PNG" style="width: 60%;height: 20%;">
                 <br>
                 <span id="header"><%=file.header%></span>
-                <br>
+                
                 <span id="body"><%=file.body%></span>
                 <br>
-                <form method="POST" action="/blog/blog/<%= file._id %>/delete">
-                  <button type="submit" class="button">Delete</button>
-                </form>
-                <form method="GET" action="/blog/blog/<%= file._id %>/edit">
-                <button type="submit" class="button">
-                  Edit    
-                </button>
-              </form>
+                
                 </li>
                 </div>
             <%})%>

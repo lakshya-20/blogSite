@@ -29,7 +29,7 @@ a{
 .form{
   
   text-align: center;
-  margin-top: 20%;
+  margin-top: 15%;
   margin-left: 32%;
   margin-right: 32%;
   
@@ -42,7 +42,7 @@ h1{
   display: block;
   opacity: 0.9;
 }
-input{
+input,textarea{
   margin-left: auto;
   margin-right: auto;
   display: block;

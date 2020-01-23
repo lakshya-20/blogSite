@@ -22,6 +22,7 @@ module.exports=function(passport){
                     record.name=req.body.name;
                     record.age=req.body.age;
                     record.email=req.body.email;
+                    record.about=req.body.about;
                     record.save(function(err,doc){
                         if(err){
                             res.status(500).send('Database Error')

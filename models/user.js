@@ -35,6 +35,10 @@ var userSchema= new mongoose.Schema({
     dateCreated:{
         type:String,
         default:dateTime
+    },
+    about:{
+        type:String,
+        default:" "
     }
 
 })
