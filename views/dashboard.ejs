@@ -56,11 +56,17 @@
                 <li>
                 <span id="title"><%=file.title%></span>
                 <span id="author">Author <a href="/profile"><%=file.author%></a></span>
+                <% var noOfLikes=0;file.likes.forEach(function(like){
+                  noOfLikes+=1;
+                })%>
                 <br>
+                <br>
+                <span id="likes">Likes <%=noOfLikes%></span>
                 <br>
                 <form method="POST" action="/blog/blog/<%= file._id%>/like">
                   <button type="submit" class="button" id="like"><img src="/images/like.png" style="width: 30px;"></button>
                 </form>
+                
                 <br>
                 <img src="/images/Capture1.PNG" style="width: 60%;height: 20%;">
                 <br>

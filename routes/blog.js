@@ -78,26 +78,35 @@ blogRouter.post('/blog/:blogId/edit',function(req,res){
     })
 })
 blogRouter.post('/blog/:blogId/like',function(req,res){
-    Blogs.find({_id:req.params.blogId,likes:{person:req.user.username}},function(err,doc){
-        console.log(doc)
-        if(doc.length!=0){
-            res.redirect('/blog/blog/'+req.user.username);
-            console.log("Entered1")
-        }
-        else if(doc.length==0){
-            console.log("Entered2")
+    Blogs.findById({_id:req.params.blogId},function(err,doc){
+        var username=req.user.username;
+        if(doc.likes.length==0){
             Blogs.findOne({_id:req.params.blogId},function(err,doc){
-                req.body.noOfLikes=req.body.noOfLikes+1;
+                req.body.noOfLikes=++req.body.noOfLikes;
                 req.body.person=req.user.username   
                 doc.likes.push(req.body);
                 doc.save();
-                res.redirect('/blog/blog/'+req.user.username);
+                console.log("Entered2")
             })
         }
-        else if(err){
-            console.log("Entered3")
-            res.status(200).send("Db Error");
-        }
+        else{
+        doc.likes.forEach(function(like){
+            console.log(like.person)
+            if(like.person==username){
+                console.log("Entered");
+            }
+            else{
+                Blogs.findOne({_id:req.params.blogId},function(err,doc){
+                    req.body.noOfLikes=++req.body.noOfLikes;
+                    req.body.person=req.user.username   
+                    doc.likes.push(req.body);
+                    doc.save();
+                    console.log("Entered2")
+                })
+            }
+        })
+    }
+        res.redirect('/blog/blog/'+req.user.username);
         })
 })
 

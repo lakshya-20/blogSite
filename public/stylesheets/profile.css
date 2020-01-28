@@ -50,6 +50,9 @@
                 font-size: 18px;
                 font-size:x-large;
             }
+            #likes{
+                float: right;
+            }
             #like{
                 float: right;
             }

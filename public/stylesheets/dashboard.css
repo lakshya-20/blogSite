@@ -62,6 +62,9 @@
             #like{
               float: right;
             }
+            #likes{
+              float: right;
+            }
             #body{
                 width: 80%;
                 margin: 2px;
