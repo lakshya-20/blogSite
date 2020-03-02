@@ -12,9 +12,10 @@
         
         <form action="/blog/blog" method="POST" class="form">
             <h1>Add Blog</h1>
-            <input type="text" name="title" id="" placeholder=" Title">
+            <input type="text" name="title" id="" placeholder=" Title" enctype="multipart/form-data">
             <textarea name="header" id="" cols="50" rows="5" class="textarea" placeholder=" Header"></textarea>
             <textarea name="body" id="" cols="50" rows="10" class="textarea" placeholder=" Body"></textarea>
+            <input type="file" name="uploadedFile" id="">
             <input type="submit" value="Submit" id="button">
         </form>
         <form action="/profile">

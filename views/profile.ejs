@@ -9,6 +9,9 @@
     </head>
 
     <body>
+        <div id="top">
+
+        </div>
         <% include partials/authNav.ejs %>
         <div id="details">
             <div id="photoBox">
@@ -59,13 +62,13 @@
                         <button type="submit" class="button" id="like"><img src="/images/like.png" style="width: 30px;"></button>
                     </form>
                     <br> 
-                    <img src="/images/Capture1.PNG" style="width: 60%;height: 20%;">
+                    <img src="/images/Capture1.PNG" style="width: 40%;height: 10%;">
                     <br>
                     <span id="header"><%=blog.header%></span>
                     <br>
                     <span id="body"><%=blog.body%></span>
                     <br>
-                    <form method="POST" action="/blog/blog/<%= blog._id %>/delete">
+                    <form method="POST" action="/profile/blog/<%= blog._id %>/delete">
                       <button type="submit" class="button">Delete</button>
                     </form>
                     <form method="GET" action="/blog/blog/<%= blog._id %>/edit">
@@ -76,6 +79,6 @@
                 <%})%>
             </ul>
         </div>
-
+        <% include partials/goToTop.ejs %>
     </body>
 </html>

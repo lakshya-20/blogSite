@@ -58,6 +58,18 @@ profileRouter.post('/blog/:blogId/like',function(req,res){
 profileRouter.get('/profile',function(req,res){
     console.log("Entered 2");
 })
+profileRouter.post('/blog/:blogId/delete',function(req,res){
+    console.log(req.params.blogId)
+    Blogs.findByIdAndRemove(req.params.blogId,function(err,doc){
+        if(err){
+            res.status(200).send("Db error")
+        }
+        else{
+            console.log("Blog Deleted")
+        }
+        res.redirect('/profile/profile/'+req.user.username);
+})
+}); 
 
 
 module.exports=profileRouter;

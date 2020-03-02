@@ -1,7 +1,14 @@
 var express=require('express')
 var mongoose=require('mongoose')
+var fs=require('fs')
+var fileUpload=require('express-fileupload');
+var mongodb=require('mongodb')
+
+
 var Blogs=require('../models/blog')
+var BlogImages=require('../models/blogImage')
 var bodyParser=require('body-parser')
+var binary=mongodb.Binary
 
 var blogRouter= express.Router()
 blogRouter.use(bodyParser.json())
@@ -29,6 +36,7 @@ blogRouter.get('/blog/:username', (req, res) => {
 });
 
 blogRouter.post('/blog',function(req,res){
+    let blogId;
     req.body.author=req.user.username
     console.log(req.user.username)
     Blogs.create(req.body,function(err,doc){
@@ -38,8 +46,23 @@ blogRouter.post('/blog',function(req,res){
         }
         else{
             console.log("Blog Inserted")
-        }
-    })
+            blogId=doc._id
+            console.log(blogId)
+            let file={blogId:blogId, file:binary(req.body.uploadedFile)}
+            BlogImages.create(file,function(err,doc){
+            if(err){
+                console.log("Error while uploading file: ",err);
+            }
+            else{
+                console.log("File Inserted")
+            }
+            })
+            }
+        })
+
+
+    
+    
     var username=req.user.username
   res.redirect('/blog/blog/'+username);
 })
