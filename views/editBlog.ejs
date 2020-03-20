@@ -10,7 +10,7 @@
     <body>
         <% include partials/authNav.ejs %>
         <% files.forEach(function(file){%>
-        <form action="/blog/blog/<%=file._id%>/edit" method="POST" class="form">
+        <form action="/profile/blog/<%=file._id%>/edit" method="POST" class="form">
             <h1>Edit Blog</h1>
             <input type="text" name="title" id="" placeholder="<%=file.title%>">
             <textarea name="header" id="" cols="50" rows="5" class="textarea" placeholder=" Header"><%=file.header%></textarea>

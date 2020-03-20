@@ -40,10 +40,6 @@ var blogSchema=new mongoose.Schema({
         type:String,
         default:dateTime
     },
-    image:{
-        type:String,
-        default:" "
-    },
     noOfLikes:{
         type:Number,
         default:0

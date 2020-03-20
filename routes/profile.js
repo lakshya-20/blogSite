@@ -70,6 +70,27 @@ profileRouter.post('/blog/:blogId/delete',function(req,res){
         res.redirect('/profile/profile/'+req.user.username);
 })
 }); 
+profileRouter.get('/blog/:blogId/edit',function(req,res){
+    Blogs.find({_id:req.params.blogId},function(err,doc){
+        if(err){
+            res.status(200).send("Db error")
+        }
+        else{
+            res.render('editBlog',{files:doc})
+        }
+    })
+})
+profileRouter.post('/blog/:blogId/edit',function(req,res){
+    Blogs.findByIdAndUpdate(req.params.blogId,{$set:req.body},function(err,doc){
+        if(err){
+            res.status(200).send("Db Error")
+        }
+        else{
+            console.log("Blog Updated")
+            res.redirect('/profile/profile/'+req.user.username);
+        }
+    })
+})
 
 
 module.exports=profileRouter;

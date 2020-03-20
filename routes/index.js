@@ -34,7 +34,7 @@ router.get('/public',function(req,res,next){
 })
 
 router.get('/blog',loggedin,function(req,res,next){
-  res.render('blog');
+  res.render('addBlog');
 });
 
 router.get('/logout',function(req,res){
