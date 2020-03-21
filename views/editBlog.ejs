@@ -8,7 +8,7 @@
         <title>Blog</title>
     </head>
     <body>
-        <% include partials/authNav.ejs %>
+        <% include partials/nav.ejs %>
         <% files.forEach(function(file){%>
         <form action="/profile/blog/<%=file._id%>/edit" method="POST" class="form">
             <h1>Edit Blog</h1>
