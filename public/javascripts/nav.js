@@ -1,15 +1,11 @@
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-
-window.onscroll=function(){
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-    navbar.style.background = "#000000";
+function myFunction() {
+  var x = document.getElementById("header-right");
+  var y = document.getElementById("icon");
+  if (x.className === "header-right") {
+    x.className += " responsive";
+    y.innerHTML='<i class="fa fa-window-close"></i>';
   } else {
-    navbar.classList.add("sticky");
-    navbar.style.background = "transparent";
+    x.className = "header-right";
+    y.innerHTML='<i class="fa fa-bars"></i>';
   }
 }

@@ -6,6 +6,7 @@
         </title>
         <link rel="Stylesheet" href="/stylesheets/nav.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="container">
@@ -13,13 +14,21 @@
                 <p><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="/dashboard">BLOGATE</a><i class="fa fa-window-minimize" aria-hidden="true"></i>
                 </p>
             </div>
+            <div class="top-header-right">
+            <div class="header-right" id="header-right">
+                <a href="/dashboard" class="link">Dashboard</a>
+                <a href="/profile" class="link">Profile</a>
+                <a href="/blog" class="link">New Blog</a>
+                <a href="/logout" class="link">Logout</a>
+            </div>
             <div class="header-right">
-                <a href="/dashboard">Dashboard</a>
-                <a href="/profile">Profile</a>
-                <a href="/blog">New Blog</a>
-                <a href="/logout">Logout</a>
+                <a href="javascript:void(0);" class="icon" id="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
         </div>
-        
+        </div>
+        <script src="/javascripts/nav.js">
+        </script>
     </body>
 </html>
