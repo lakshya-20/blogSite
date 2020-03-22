@@ -19,7 +19,7 @@ profileRouter.get('/profile/:username',function(req,res){
             console.log(noOfLikes);
             var noOfBlogs=blogs.length;
             console.log(user);
-            res.render('profile',{blogs:blogs,user:user,noOfBlog:noOfBlogs,noOfLikes:noOfLikes,username:req.params.username})
+            res.render('profile',{files:blogs,user:user,noOfBlogs:noOfBlogs,noOfLikes:noOfLikes,username:req.params.username})
         })
     })
 })

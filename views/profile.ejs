@@ -4,6 +4,9 @@
         <title>Profile</title>
         <meta charset="UTF-8">
         <link rel='stylesheet' href='/stylesheets/profile.css' />
+        <link rel="stylesheet" href="/stylesheets/blog.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
@@ -12,7 +15,151 @@
     
     <body>
         
-    
+        <div class="profile-top-wrapper">
+            <div class="profile-top-wrapper-container">
+                <% user.forEach(function(user){%>
+                    <div class="user-details">
+                        <h1><%=user.name%></h1>
+                        <h2>@<%=user.username%></h2>
+                        <h3><%=user.about%></h3>
+                    </div>
+                    <%})%>
+                    <div class="user-stats">
+                        <div class="stats">
+                            <div class="stats-blogs">
+                                <p>
+                                <%=noOfBlogs%><br>Blogs
+                            </p>
+                            </div>
+                        </div>
+                        <div class="stats">
+                            <div class="stats-likes">
+                                <p>
+                                <%=noOfLikes%><br>Likes
+                            </p>
+                            </div>
+                        </div>
+                        <div class="stats">
+                            <div class="stats-followers">
+                                <p>
+                                10<br>Followers
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="blog-wrapper">
+            <h2>BLOGS</h2>
+            <div class="blogs">
+                <% files.forEach(function(file){%>
+                    <% var noOfLikes=0;file.likes.forEach(function(like){
+                        noOfLikes+=1;
+                      })%>
+                <div class="blog">    
+                
+                    <div class="blog-title">
+                        <a onclick="myFunction('<%=file.title%>')"><%=file.title%></a>
+                    </div>
+                    <div class="blog-header">
+                        <a  onclick="myFunction('<%=file.title%>')"><%=file.header%></a>
+                    </div>
+                    <div id="<%= file.title%>" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                          <span class="close" onclick="myFunction2()">&times;</span>
+                          <div class="modal-logo">
+                              
+                          </div>
+                          <div class="modal-blog-title">
+                            <%=file.title%>
+                        </div>
+                        <div class="modal-blog-footer blog-footer">
+                            <div class="modal-likes likes">
+                              <form method="POST" action="/blog/blog/<%= file._id%>/like">
+                                <button type="submit">
+                                <img src="/images/like.png">
+                                <div class="modal-likesCount likesCount">
+                                  <%=noOfLikes%>
+                              </div>
+                              </button>
+                            </form>
+                                
+                            </div>
+                            <div class="modal-blog-author blog-author">
+                                Author: 
+                                <span>
+                                <%=file.author%>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="modal-blog-header">
+                            <%=file.header%>
+                        </div>
+                        <div class="modal-blog-body">
+                            <%=file.body%>
+                        </div>
+                        
+                        </div>
+                      
+                      </div>
+                    <div class="blog-footer">
+                        <div class="likes">
+                          <form method="POST" action="/blog/blog/<%= file._id%>/like">
+                            <button type="submit">
+                            <img src="/images/like.png">
+                            <div class="likesCount" style="float: right;">
+                              <%=noOfLikes%>
+                          </div>
+                          </button>
+                        </form>
+                            
+                        </div>
+                        <div class="blog-author">
+                            Author:
+                            <span>
+                                <%=file.author%>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+            </div>
+            <div class="blogs">
+                <% files.forEach(function(file){%>
+                    <% var noOfLikes=0;file.likes.forEach(function(like){
+                        noOfLikes+=1;
+                      })%>
+                <div class="blog">
+                    
+                    <div class="blog-title">
+                        <%=file.title%>
+                    </div>
+                    <div class="blog-header">
+                        <%=file.header%>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="likes">
+                            <img src="/images/like.png">
+                            <div class="likesCount">
+                                <%=noOfLikes%>
+                            </div>
+                        </div>
+                        <div class="blog-author">
+                            Author:<%=file.author%>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+            </div>  
+        </div>
+
+        
         <% include partials/goToTop.ejs %>
+        <footer>
+            <% include partials/footer.ejs %>
+        </footer>
     </body>
+    <script src="/javascripts/blog.js"></script>
 </html>

@@ -1,144 +1,82 @@
-            
-            body{
-                position: relative;
-                background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("/images/Capture4.png");
-                width: auto;  
-                height: auto;   
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                font-family: "Times New Roman", Times, serif;
-            }
-            #heading{
-                text-align: center;
-                color: white;
-                margin-top: 50px;;
-            }
-            #blogs ul{
-            list-style-type: none;
-            padding: 0px;
-            margin-top: 100px;
+.profile-top-wrapper{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/images/cap.jpg");
+    background-size: cover;
+    color: white;
+    padding: 10% 0% 15% 0%;
+    border: coral solid 2px;
+}
+  .profile-top-wrapper-container{
+      padding:0% 5%;
+  }
+  .user-details{
+      float: left;
+      width: 40%;
+
+  }
+  .user-details h1{
+    font-size:45px;
+    letter-spacing:5px;
+    margin-bottom:1%;
+  }
+  .user-details h2{
+    font-size:30px;
+    letter-spacing:3px;
+  }
+  .user-details h3{
+    font-size:15px;
+    letter-spacing:1px;
+    margin-bottom:1%;
+  }
+  .user-stats{
+      float: right;
+      width: 50%;
+      text-align: center;
+  }
+  .stats{
+      float: left;
+      margin: 5%;
+      margin-top:0px;
+      width: 15%;
+  }
+  .stats img{
+      width: 100%;
+      position: relative;
+  }
+  .stats-blogs{
+    background-image: url("/images/stats1.png");
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .stats-likes{
+      background-image: url("/images/stats2.png");
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-repeat: no-repeat;
       
-            }
-            #blogs li{
-                padding: 30px;
-                font-size: 20px;
-                height: auto;
-            }
-            #blogs li span{
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            #title{
-                width: auto;
-                margin: 0px;
-                padding: 5px;
-                display: block;
-                box-sizing: border-box;
-                font-size: 18px;
-                border-radius: 0px;
-                font-size: xx-large;
-                color: white;
-            }
-            #header{
-                width: auto;
-                margin-left: 2px;
-                padding: 10px;
-                display: block;
-                font-size: 18px;
-                font-size:x-large;
-            }
-            #likes{
-                float: right;
-            }
-            #like{
-                float: right;
-            }
-            #body{
-                width: 80%;
-                margin: 2px;
-                padding: 10px;
-                display: block;
-                box-sizing: border-box;
-                font-size: 18px;
-                border-radius: 0px;
-                margin-left: auto;
-                margin-right: auto;
-                font-size: x-large;
-                color: #cccccc;
-            }
-            #blog{
-                border-bottom: 3px solid #cccccc;
-            }
-            .button{
-              margin-left: auto;
-              margin-right: auto;
-              display: block;
-              opacity: 0.7;
-              margin-top: 5px;
-              border: 1px solid;
-              border-color: #4d4d4d;
-              border-radius: 5px;
-              text-align: center;
-              color:#4d4d4d;
-              text-decoration: none;
-              text-transform: uppercase;
-              opacity: 0.9; 
-            }
-            #details{
-                margin:10%;
-            }
-            #photoBox{
-                width: 30%;
-                background-color: crimson;
-                float: left;
-                height: 40%;
-            }
-            #detailsBox{
-                width: 70%;
-                height: 40%;
-               
-                float: right;
-            }
-            #dp{
-                width: 100%;
-                height: 100%;
-                padding: auto;
-            }
-            #username{
-                
-                margin-left: 10%;
-                font-size: xx-large;
-                color: white;
-                text-transform: uppercase;
-            }
-            #about{
-                
-                margin-left: 10%;
-                font-size: x-large;
-                color: #cccccc;
-            }
-            #headList{
-                list-style-type: none;
-                
-                
-            }
-            #headList li{
-                margin: 5%;
-                display: inline-block;
-                background-color: #cccccc;
-                border: whitesmoke solid 1px;
-                border-radius: 5px;
-                opacity: 0.6;
-            }
-            .head{
-                text-align: center;
-                font-size: larger;
-            }
-            .bottom{
-                font-size: large;
-            }
-
-
+  }
+  .stats-followers{
+    background-image: url("/images/stats3.png");
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .stats-blogs p{
+    position: absolute;
+    margin-left: 2%;
+    margin-top:2%;
+  }
+  .stats-likes p{
+      position: absolute;
+      margin-left: 2%;
+      margin-top:2%;
+  }
+  .stats-followers p{
+    position: absolute;
+    margin-left: 1%;
+    margin-top:2%;
+  }
+        
