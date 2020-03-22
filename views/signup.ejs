@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <link rel='stylesheet' href='/stylesheets/style.css' />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Signup</title>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/login.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <script>
-        form.addEventListener('submit',(e)=>{
-    e.preventDefault();
-                    var a=document.form.name.value;
-                    var b=document.form.email.value;
-                    var c=document.form.password.value;
-                    var d=document.form.username.value;
-                    var e=document.form.age.value;
-                    if((a==null||a=="")&&(b==null||b=="")&&(c==null||c=="")&&(d==null||d=="")){
-                        alert("All fields are required");
-                        return false;
-                    }
-                    else if(a==null||a==""){
-                        alert("Name Required");
-                        return false;
-                    }
-                    else if(b==null||b==""){
-                        alert("Email Required");
-                        return false;
-                    }
-                    else if(c==null||c==""){
-                        alert("Password Required");
-                        return false;
-                    }
-                    else if(d==null||d==""){
-                        alert("Username Required");
-                        return false;
-                    }
-                    else if(e==null||e==""){
-                        alert("Age Required");
-                        return false;
-                    }
-                    
-                }
-        </script>
     <body>
-        
-        <form action="/auth/signup" method="post" class="form">
-            <h1>Signup</h1>
-            <input type="text" name="name" placeholder=" Full Name">
-            <input type="text" name="username" placeholder=" Username">
-            <input type="password" name="password" placeholder=" Password">
-            <input type="text" name="age" placeholder=" Age">
-            <input type="email" name="email" placeholder=" EmailId">
-            <textarea name="about" id="" cols="30" rows="10" placeholder="A little about you"></textarea>
-            <input type="submit" value="Signup" class="button">
-        </form>
-        <form action="/login">
-            <input type="submit" value="Login " class="button">
-        </form>
+        <div class="left" style="height: 155%;">
+            <div class="top-wrapper" class="top-wrapper">
+                <h1>READ THE WORLD<span>.</span></h1>
+                <h1>WORLD ON THE STREET</h1>
+                <p><span>Blogate</span> is a website that offers blog content.</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="container">
+                <div class="login">
+                    <form action="/auth/signup" method="post">
+                        <div class="imgcontainer" style="display: block;">
+                          <img src="/images/loginUser.png"  alt="Avatar" class="avatar">
+                        </div>
+                      
+                        <div class="container">
+                          <label for="name"><b>Name</b></label>
+                          <input type="text" placeholder="Enter Name" name="name" required>
+                          <label for="username"><b>Username</b></label>
+                          <input type="text" placeholder="Enter Username" name="username" required>
+                          <label for="age"><b>Age</b></label>
+                          <input type="text" placeholder="Enter Age" name="age" required>
+                          <label for="email"><b>Email</b></label>
+                          <input type="text" placeholder="Enter Email" name="email" required>
+                          <label for="password"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="password" required>
+                          <label for="about"><b>About</b></label>
+                          <textarea name="about" id="" cols="30" rows="10" placeholder="A little about you"></textarea>
+                          <button type="submit">Sign Up</button>
+                        </div>
+                        
+                        
+                      </form>
+                      <form action="/" method="GET">
+                        <div class="container" style="background-color:#f1f1f1; float: left;">
+                            <button type="submit" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                          </div>
+                      </form>
+                      <form action="/login" method="GET">
+                        <div class="container" style="background-color:#f1f1f1; float: right;">
+                            <button type="submit" class="cancelbtn">Login</button>
+                          </div>
+                      </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

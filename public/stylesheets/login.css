@@ -1,0 +1,103 @@
+.left{
+    background-image: url("/images/login.jpg");
+    background-size: cover;
+    height: 100%;
+    top: 0px;
+    float: left;
+    width: 50%;
+}
+.top-wrapper{
+    margin-top:35%;
+    text-align: center;
+}
+.top-wrapper h1{
+    font-size:45px;
+    letter-spacing:5px;
+    margin-bottom:2%;
+  }
+
+  .top-wrapper h1 span{
+      color: red;
+  }
+
+  .top-wrapper p{
+      margin-top: 2%;
+      font-size: 20px;
+  }
+  .top-wrapper p span{
+      color: white;
+  }
+  .right{
+      float: right;
+      width: 50%;
+  }
+  form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password],textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+  display: none;
+}
+
+  html,body{
+    height: 100%;
+  }
+
+
+@media screen and (max-width: 680px) {
+.left{
+    display: none;
+    float: none;
+}
+.right{
+    float: none;
+    width: 100%;
+}
+.imgcontainer{
+    display: block;
+}
+}

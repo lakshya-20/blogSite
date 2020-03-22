@@ -12,7 +12,7 @@ var loggedin=function(req,res,next){
 }
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/blog/blog');
 });
 
 router.get('/login',function(req,res,next){

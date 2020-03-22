@@ -1,4 +1,4 @@
-function myFunction() {
+function navBar() {
   var x = document.getElementById("header-right");
   var y = document.getElementById("icon");
   if (x.className === "header-right") {

@@ -16,7 +16,7 @@ blogRouter.get('/blog',function(req,res){
             res.status(500).send("Error Occured");
         }
         else{
-            res.render('public',{files:docs})
+            res.render('index',{files:docs})
         }
     })
 })

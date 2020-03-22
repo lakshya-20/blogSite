@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <link rel='stylesheet' href='/stylesheets/style.css' />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/login.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <script>
-    function check(){
-                var a=document.form.password.value;
-                var b=document.form.username.value;
-                if((a==null||a=="")&&(b==null||b=="")){
-                    alert("All fields are required");
-                    return false;
-                }
-                else if(a==null||a==""){
-                    alert("Password Required");
-                    return false;
-                }
-                else if(b==null||b==""){
-                    alert("Username Required");
-                    return false;
-                }
-            }
-    </script>
     <body>
-        
-        <form action="/auth/login" method="post" class="form">
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <input type="submit" value="Login" class="button">
-        </form><li>
-        <form action="/signup">
-            <input type="submit" value="Signup " class="button">
-        </form>
+        <div class="left">
+            <div class="top-wrapper" class="top-wrapper">
+                <h1>READ THE WORLD<span>.</span></h1>
+                <h1>WORLD ON THE STREET</h1>
+                <p><span>Blogate</span> is a website that offers blog content.</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="container">
+                <div class="login">
+                    <form action="/auth/login" method="post">
+                        <div class="imgcontainer">
+                          <img src="/images/loginUser.png" alt="Avatar" class="avatar">
+                        </div>
+                      
+                        <div class="container">
+                          <label for="uname"><b>Username</b></label>
+                          <input type="text" placeholder="Enter Username" name="username" required>
+                      
+                          <label for="psw"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="password" required>
+                              
+                          <button type="submit">Login</button>
+                        </div>
+                        
+                        
+                      </form>
+                      <form action="/" method="GET">
+                        <div class="container" style="background-color:#f1f1f1; float: left;">
+                            <button type="submit" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                          </div>
+                      </form>
+                      <form action="/signup" method="GET">
+                        <div class="container" style="background-color:#f1f1f1; float: right;">
+                            <button type="submit" class="cancelbtn">Signup</button>
+                          </div>
+                      </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
