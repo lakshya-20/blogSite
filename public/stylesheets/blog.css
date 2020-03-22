@@ -61,6 +61,11 @@
 .likes{
   float: left;
 }
+.likes form button{
+  text-decoration: none;
+  background: transparent;
+  border: none;
+}
 .likes img{
   width: 30px;
   margin-left: 10px;

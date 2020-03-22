@@ -7,3 +7,8 @@ window.onscroll = function(){
         top_button.style.display="none";
     }
 }
+
+function goToTop(){
+    document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
