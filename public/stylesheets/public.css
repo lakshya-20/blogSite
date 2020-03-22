@@ -1,0 +1,63 @@
+body{
+    font-family: "Lucida Grande";
+}
+a{
+    text-decoration: none;
+}
+.top-wrapper{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/images/cap.jpg");
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 15% 0% 10% 0%;
+}
+.top-wrapper h1{
+    font-size:45px;
+    letter-spacing:5px;
+    margin-bottom:2%;
+  }
+
+  .top-wrapper h1 span{
+      color: red;
+  }
+
+  .top-wrapper p{
+      margin-top: 2%;
+      font-size: 20px;
+  }
+  .top-wrapper p span{
+      color: black;
+  }
+
+  .bottom-wrapper{
+    margin:5%;
+  }
+  
+  .email{
+    background-color:#c2d6d6;
+    opacity:0.8;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 24px;
+    color:black;
+    opacity:0.8;
+    border: 2px #94b8b8 solid ;
+    border-radius: 10px;
+  }
+  .btn:hover{
+    opacity:1;
+  }
+
+  
+  @media screen and (max-width: 680px) {
+    .body-wrapper{
+      padding: 3% 3%;
+    }
+    .likes .likesCount{
+      margin: 5px;
+    }
+  }
+  
+
+  

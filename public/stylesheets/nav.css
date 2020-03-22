@@ -54,7 +54,7 @@ body {
   text-decoration: none;
 }
 .header-right .icon{
-  display: block;
+  display: none;
 }
 .header-right a:hover {
   background-color: rgba(255, 255, 255, 0.3);

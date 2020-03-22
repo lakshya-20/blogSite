@@ -55,8 +55,8 @@ profileRouter.post('/blog/:blogId/like',function(req,res){
         res.redirect('/profile/profile/'+req.user.username);
         })
 })
-profileRouter.get('/profile',function(req,res){
-    console.log("Entered 2");
+profileRouter.get('/publicProfile',function(req,res){
+    
 })
 profileRouter.post('/blog/:blogId/delete',function(req,res){
     console.log(req.params.blogId)
