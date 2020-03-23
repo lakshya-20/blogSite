@@ -78,4 +78,14 @@
     margin-left: 1%;
     margin-top:2%;
   }
+  @media screen and (max-width: 680px) {
+    .profile-top-wrapper{
+      padding-bottom: 40%;
+    }
+    .profile-top-wrapper-container{
+      padding-top: 5%;
+  }
+
+
+  }
         

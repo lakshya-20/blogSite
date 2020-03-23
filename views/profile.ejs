@@ -85,6 +85,12 @@
                               </div>
                               </button>
                             </form>
+                            <form method="GET" action="/profile/blog/<%= file._id %>/edit" class="edit">
+                            <button type="submit"><i class="fa fa-pencil"></i></button>
+                        </form>
+                        <form method="POST" action="/profile/blog/<%= file._id %>/delete" class="delete">
+                            <button type="submit" class="button"><i class="fa fa-trash"></i></button>
+                        </form>
                                 
                             </div>
                             <div class="modal-blog-author blog-author">
@@ -106,13 +112,20 @@
                       </div>
                     <div class="blog-footer">
                         <div class="likes">
-                          <form method="POST" action="/profile/profile/<%= file._id%>/like">
+                          <form method="POST" action="/profile/blog/<%= file._id%>/like">
                             <button type="submit">
                             <img src="/images/like.png">
                             <div class="likesCount" style="float: right;">
                               <%=noOfLikes%>
                           </div>
                           </button>
+                        </form>
+                        
+                        <form method="GET" action="/profile/blog/<%= file._id %>/edit" class="edit">
+                            <button type="submit"><i class="fa fa-pencil"></i></button>
+                        </form>
+                        <form method="POST" action="/profile/blog/<%= file._id %>/delete" class="delete">
+                            <button type="submit" class="button"><i class="fa fa-trash"></i></button>
                         </form>
                             
                         </div>

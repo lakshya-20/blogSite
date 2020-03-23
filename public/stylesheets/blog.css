@@ -75,6 +75,12 @@
   margin: 5px;
   font-size: 20px;
 }
+.likes form {
+  float: left;
+}
+.edit,.delete button{
+  margin-top: 10px;
+}
 .blog-author{
   float: right;
   margin: 10px;

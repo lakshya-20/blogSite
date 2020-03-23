@@ -23,7 +23,7 @@ profileRouter.get('/profile/:username',function(req,res){
         })
     })
 })
-profileRouter.post('/profile/:blogId/like',function(req,res){
+profileRouter.post('/blog/:blogId/like',function(req,res){
     Blogs.findById({_id:req.params.blogId},function(err,doc){
         var username=req.user.username;
         if(doc.likes.length==0){

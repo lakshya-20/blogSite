@@ -10,7 +10,8 @@ var passport=require('passport');
 
 require('./utils/passport')(passport);
 
-var connect=mongoose.connect('mongodb://localhost:27017/blogs');  
+//var connect=mongoose.connect('mongodb://localhost:27017/blogs');  
+var connect=mongoose.connect('mongodb+srv://admin:admin@cluster0-qfffq.mongodb.net/test?retryWrites=true&w=majority');
 connect.then((db) =>{
   console.log('Connected correctly to server');
 },(err)=>{console.log(err)});
