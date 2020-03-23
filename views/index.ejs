@@ -88,33 +88,7 @@
                 </div>
                 <%})%>
             </div>
-            <div class="blogs">
-                <% files.forEach(function(file){%>
-                    <% var noOfLikes=0;file.likes.forEach(function(like){
-                        noOfLikes+=1;
-                      })%>
-                <div class="blog">
-                    
-                    <div class="blog-title">
-                        <%=file.title%>
-                    </div>
-                    <div class="blog-header">
-                        <%=file.header%>
-                    </div>
-                    <div class="blog-footer">
-                        <div class="likes">
-                            <img src="/images/like.png">
-                            <div class="likesCount">
-                                <%=noOfLikes%>
-                            </div>
-                        </div>
-                        <div class="blog-author">
-                            Author:<%=file.author%>
-                        </div>
-                    </div>
-                </div>
-                <%})%>
-            </div>  
+            
         </div>
 
         <div>
