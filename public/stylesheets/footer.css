@@ -1,3 +1,8 @@
+.pageFooterContainer{
+    clear: both;
+    position: relative;
+    bottom: 0%;
+}
 .footer-left{
     float: left;
     line-height: 30px;

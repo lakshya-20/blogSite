@@ -14,7 +14,21 @@
     </head>
     
     <body>
-        
+        <script>
+            var check=null;
+            function func1() {
+                var span=document.getElementById('none');
+                check="<%=noOfBlogs%>";
+                if(check!=0){
+                    span.style.display="none";
+                }
+                else{
+                    span.style.display="block";
+                }
+            }
+            window.onload=func1;
+    
+        </script>
         <div class="profile-top-wrapper">
             <div class="profile-top-wrapper-container">
                 <% user.forEach(function(user){%>
@@ -39,7 +53,7 @@
                             </p>
                             </div>
                         </div>
-                        <div class="stats">
+                        <div class="stats" style="display: none;">
                             <div class="stats-followers">
                                 <p>
                                 10<br>Followers
@@ -139,7 +153,19 @@
                 </div>
                 <%})%>
             </div>
-            
+            <div class="blogs" id="none">
+                <div class="blog">
+                    
+                    <div class="blog-title">
+                        No blogs yet.
+                    </div>
+                    <div class="blog-header">
+                        Create one by clicking the New Blog button in navbar.
+                    </div>
+                    
+                </div>
+                
+            </div>  
         </div>
 
         
@@ -149,4 +175,5 @@
         </footer>
     </body>
     <script src="/javascripts/blog.js"></script>
+    
 </html>
