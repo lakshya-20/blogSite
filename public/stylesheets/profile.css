@@ -2,8 +2,7 @@
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/images/cap.jpg");
     background-size: cover;
     color: white;
-    padding: 10% 0% 15% 0%;
-    border: coral solid 2px;
+    padding: 10% 0% 10% 0%;
 }
   .profile-top-wrapper-container{
       padding:0% 5%;

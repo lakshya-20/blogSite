@@ -8,14 +8,11 @@ body{
     background-position: center;
     background-attachment: fixed;
   }
-
-  .form{
-  
-    text-align: center;
-    margin-top: 10%;
-    margin-left: 32%;
-    margin-right: 32%;
-    
+.newBlogContainer{
+  text-align: center;
+  padding: 10% 0px;
+}
+  form{
     border-radius: 30px;
   }
   .textarea ,input{
@@ -42,10 +39,9 @@ body{
     color:white;
     text-decoration: none;
     text-transform: uppercase;
-    display: block;
-    opacity: 0.9;
     font-size: 40px;
-    text-align: center;
+    letter-spacing:4px;
+    margin-bottom:2%;
   }
   label{
     color:white;
@@ -53,4 +49,9 @@ body{
     text-transform: uppercase;
     display: block;
     opacity: 0.9;
+  }
+  @media screen and (max-width: 680px) {
+    .newBlogContainer{
+      padding:20% 0%;
+    }
   }

@@ -9,16 +9,17 @@
     </head>
     <% include partials/nav.ejs %>
     <body>
-        
-        <form action="/blog/blog" method="POST" class="form">
-            <h1>Add Blog</h1>
-            <input type="text" name="title" id="" placeholder=" Title" enctype="multipart/form-data">
-            <textarea name="header" id="" cols="50" rows="5" class="textarea" placeholder=" Header (pair of lines to describe your blog)"></textarea>
-            <textarea name="body" id="" cols="50" rows="10" class="textarea" placeholder=" Body"></textarea>
-            <input type="submit" value="Submit" id="button">
-        </form>
-        <form action="/dashboard">
-            <input type="submit" value="Back" id="button">
-        </form>
+        <div class="newBlogContainer">
+            <form action="/blog/blog"  method="POST">
+                <h1>New Blog</h1>
+                <input type="text" name="title"placeholder=" Title" enctype="multipart/form-data">
+                <textarea name="header" id="" cols="50" rows="5" class="textarea" placeholder=" Header (pair of lines to describe your blog)"></textarea>
+                <textarea name="body" id="" cols="50" rows="10" class="textarea" placeholder=" Body"></textarea>
+                <input type="submit" value="ADD" id="button">
+            </form>
+            <form action="/dashboard">
+                <input type="submit" value="Cancel" id="button">
+            </form>
+        </div>
     </body>
 </html>

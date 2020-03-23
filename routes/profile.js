@@ -23,7 +23,7 @@ profileRouter.get('/profile/:username',function(req,res){
         })
     })
 })
-profileRouter.post('/blog/:blogId/like',function(req,res){
+profileRouter.post('/profile/:blogId/like',function(req,res){
     Blogs.findById({_id:req.params.blogId},function(err,doc){
         var username=req.user.username;
         if(doc.likes.length==0){
@@ -35,24 +35,27 @@ profileRouter.post('/blog/:blogId/like',function(req,res){
                 console.log("Entered2")
             })
         }
+        
         else{
+            var check=0;
         doc.likes.forEach(function(like){
-            console.log(like.person)
+            //console.log(like.person)
             if(like.person==username){
                 console.log("Entered");
-            }
-            else{
-                Blogs.findOne({_id:req.params.blogId},function(err,doc){
-                    req.body.noOfLikes=++req.body.noOfLikes;
-                    req.body.person=req.user.username   
-                    doc.likes.push(req.body);
-                    doc.save();
-                    console.log("Entered2")
-                })
+                check=1;
             }
         })
+        if(check==0){
+            Blogs.findOne({_id:req.params.blogId},function(err,doc){
+                req.body.noOfLikes=++req.body.noOfLikes;
+                req.body.person=req.user.username   
+                doc.likes.push(req.body);
+                doc.save();
+                console.log("Entered2")
+            })
+        }
     }
-        res.redirect('/profile/profile/'+req.user.username);
+    res.redirect('/profile/profile/'+req.user.username); 
         })
 })
 profileRouter.get('/publicProfile',function(req,res){
