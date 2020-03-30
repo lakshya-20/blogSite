@@ -84,6 +84,9 @@ profileRouter.get('/blog/:blogId/edit',function(req,res){
     })
 })
 profileRouter.post('/blog/:blogId/edit',function(req,res){
+    console.log(req.body);
+    //res.sendStatus(200);
+    
     Blogs.findByIdAndUpdate(req.params.blogId,{$set:req.body},function(err,doc){
         if(err){
             res.status(200).send("Db Error")
@@ -93,6 +96,7 @@ profileRouter.post('/blog/:blogId/edit',function(req,res){
             res.redirect('/profile/profile/');
         }
     })
+    
 })
 
 

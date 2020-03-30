@@ -13,7 +13,7 @@
             <div class="newBlogContainer">
         <form action="/profile/blog/<%=file._id%>/edit" method="POST">
             <h1>Edit Blog</h1>
-            <input type="text" name="title" id="" placeholder="<%=file.title%>">
+            <input type="text" name="title" id="" placeholder="<%=file.title%>" enctype="multipart/form-data" value="<%= file.title%>">
             <textarea name="header" id="" cols="50" rows="5" class="textarea" placeholder=" Header"><%=file.header%></textarea>
             <textarea name="body" id="" cols="50" rows="10" class="textarea" placeholder=" Body"><%=file.body%></textarea>
             <input type="submit" value="Update" id="button">
