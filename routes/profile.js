@@ -16,9 +16,7 @@ profileRouter.get('/profile',function(req,res){
                     noOfLikes+=1;
                 })
             })
-            console.log(noOfLikes);
             var noOfBlogs=blogs.length;
-            console.log(user);
             res.render('profile',{files:blogs,user:user,noOfBlogs:noOfBlogs,noOfLikes:noOfLikes,username:req.params.username})
         })
     })
@@ -32,16 +30,13 @@ profileRouter.post('/blog/:blogId/like',function(req,res){
                 req.body.person=req.user.username   
                 doc.likes.push(req.body);
                 doc.save();
-                console.log("Entered2")
             })
         }
         
         else{
             var check=0;
         doc.likes.forEach(function(like){
-            //console.log(like.person)
             if(like.person==username){
-                console.log("Entered");
                 check=1;
             }
         })
@@ -51,7 +46,6 @@ profileRouter.post('/blog/:blogId/like',function(req,res){
                 req.body.person=req.user.username   
                 doc.likes.push(req.body);
                 doc.save();
-                console.log("Entered2")
             })
         }
     }
@@ -83,10 +77,7 @@ profileRouter.get('/blog/:blogId/edit',function(req,res){
         }
     })
 })
-profileRouter.post('/blog/:blogId/edit',function(req,res){
-    console.log(req.body);
-    //res.sendStatus(200);
-    
+profileRouter.post('/blog/:blogId/edit',function(req,res){    
     Blogs.findByIdAndUpdate(req.params.blogId,{$set:req.body},function(err,doc){
         if(err){
             res.status(200).send("Db Error")
