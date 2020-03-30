@@ -43,7 +43,7 @@ router.get('/logout',function(req,res){
 });
 
 router.get('/profile',loggedin,function(req,res,next){
-  res.redirect('/profile/profile/'+req.user.username);
+  res.redirect('/profile/profile/');
 })
 router.get('/publicProfile',loggedin,function(req,res,next){
   res.redirect('/profile/publicProfile');

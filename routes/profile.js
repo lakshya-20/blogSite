@@ -7,10 +7,10 @@ var bodyParser=require('body-parser')
 var profileRouter=express.Router()
 profileRouter.use(bodyParser.json())
 
-profileRouter.get('/profile/:username',function(req,res){
+profileRouter.get('/profile',function(req,res){
     var noOfLikes=0;
-    User.find({username:req.params.username}).exec(function(err,user){
-        Blogs.find({author:req.params.username}).exec(function(err,blogs){
+    User.find({username:req.user.username}).exec(function(err,user){
+        Blogs.find({author:req.user.username}).exec(function(err,blogs){
             blogs.forEach(function(blog){
                 blog.likes.forEach(function(like){
                     noOfLikes+=1;
@@ -55,7 +55,7 @@ profileRouter.post('/blog/:blogId/like',function(req,res){
             })
         }
     }
-    res.redirect('/profile/profile/'+req.user.username); 
+    res.redirect('/profile/profile/'); 
         })
 })
 profileRouter.get('/publicProfile',function(req,res){
@@ -70,7 +70,7 @@ profileRouter.post('/blog/:blogId/delete',function(req,res){
         else{
             console.log("Blog Deleted")
         }
-        res.redirect('/profile/profile/'+req.user.username);
+        res.redirect('/profile/profile/');
 })
 }); 
 profileRouter.get('/blog/:blogId/edit',function(req,res){
@@ -90,7 +90,7 @@ profileRouter.post('/blog/:blogId/edit',function(req,res){
         }
         else{
             console.log("Blog Updated")
-            res.redirect('/profile/profile/'+req.user.username);
+            res.redirect('/profile/profile/');
         }
     })
 })
