@@ -1,4 +1,4 @@
-# Word On The Street
+# Blogate
 ## A blog site
 To run on local server, clone and run following command
 
