@@ -10,18 +10,17 @@
   .user-details{
       float: left;
       width: 40%;
-
   }
   .user-details h1{
     font-size:45px;
-    letter-spacing:5px;
+    letter-spacing:3px;
     margin-bottom:1%;
   }
   .user-details h2{
     font-size:30px;
     letter-spacing:3px;
   }
-  .user-details h3{
+  .user-details p{
     font-size:15px;
     letter-spacing:1px;
     margin-bottom:1%;
@@ -30,30 +29,29 @@
       float: right;
       width: 50%;
       text-align: center;
+      
   }
   .stats{
       float: left;
       margin: 5%;
       margin-top:0px;
-      width: 15%;
-  }
-  .stats img{
-      width: 100%;
-      position: relative;
+      width: 100px;
+      height: 100px;
   }
   .stats-blogs{
     background-image: url("/images/stats1.png");
-    width: 100px;
-    height: 100px;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    padding: 30px 0;
+    
   }
   .stats-likes{
       background-image: url("/images/stats2.png");
-      width: 100px;
-      height: 100px;
-      background-size: contain;
       background-repeat: no-repeat;
+      background-size: contain;
+      text-align: center;
+      padding: 30px 0;
       
   }
   .stats-followers{
@@ -64,14 +62,11 @@
     background-repeat: no-repeat;
   }
   .stats-blogs p{
-    position: absolute;
-    margin-left: 2%;
-    margin-top:2%;
+    text-align: center;
+    
   }
   .stats-likes p{
-      position: absolute;
-      margin-left: 2%;
-      margin-top:2%;
+      text-align: center;
   }
   .stats-followers p{
     position: absolute;
@@ -80,11 +75,46 @@
   }
   @media screen and (max-width: 680px) {
     .profile-top-wrapper{
-      padding-bottom: 40%;
+      padding-bottom: 50%;
     }
     .profile-top-wrapper-container{
-      padding-top: 5%;
-  }
+      margin-top: 30px;
+
+    }
+    .user-details{
+      width: 60%;
+    }
+    .user-details h1{
+      font-size:25px;
+      letter-spacing:3px;
+    }
+    .user-details h2{
+      margin-top: 10px;
+      font-size:20px;
+      letter-spacing:1px;
+    }
+    .user-details p{
+      margin-top: 5px;
+      font-size:18px;
+      letter-spacing:1px;
+      margin-bottom:1%;
+    }
+    .user-stats{
+      width: 40%;
+      
+    } 
+    .stats{
+      float: right;
+      width: 70px;
+      height: 70px;
+    }
+    .stats-blogs{
+      padding: 10px 0;
+    }
+    
+    .stats-likes{
+      padding: 10px 0;
+    }
 
 
   }
