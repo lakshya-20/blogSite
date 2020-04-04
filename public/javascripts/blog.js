@@ -6,14 +6,8 @@ function myFunction(title){
   btn = document.getElementById("myBtn");
   span = document.getElementsByClassName("close")[0];
   title = document.getElementsByClassName("blog-title");
-  // When the user clicks the button, open the modal 
     
   modal.style.display = "block";
-  
-  // When the user clicks on <span> (x), close the modal
-  
-  
-  // When the user clicks anywhere outside of the modal, close it
   
 }
 function myFunction2() {
