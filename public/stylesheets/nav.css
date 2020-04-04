@@ -9,19 +9,16 @@ h1, h2, h3, h4, h5, h6, p, div {
   margin: 0;
   padding: 0;
 }
-.container {
+.navContainer {
   height: 65px;
   width: 100%;
   background-color: rgba(34, 49, 52, 0.9);
   top: 0;
   z-index: 10;
+  position: fixed;
 }
 body {
   font-family: "Lucida Grande";
-}
-.container{
-  background-color: rgba(34, 49, 52, 0.9);
-  position: fixed;
 }
 .header-left {
   float: left;
